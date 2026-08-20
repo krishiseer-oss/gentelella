@@ -4,10 +4,10 @@
   "type": "module",
   "description": "Gentelella v4 — free admin template. 60 pages, 20 chart variants, fully interactive inbox & kanban, live theme generator, component playground, PWA-ready. Vite 8, vanilla JS, no Bootstrap, no jQuery.",
   "scripts": {
-    "dev": "vite --clearScreen false",
-    "build": "NODE_ENV=production vite build",
-    "build:dev": "NODE_ENV=development vite build",
-    "preview": "vite preview",
+    "dev": "next dev",
+    "build": "next build",
+    "build:dev": "next build",
+    "preview": "next start",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write src/",
@@ -68,6 +68,9 @@
     "vite": "^8.2.0"
   },
   "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "datatables.net": "^3.0.1",
     "echarts": "^6.1.0",
     "leaflet": "^1.9.4"
