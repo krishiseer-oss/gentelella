@@ -71,6 +71,8 @@
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.111.0",
     "datatables.net": "^3.0.1",
     "echarts": "^6.1.0",
     "leaflet": "^1.9.4"
