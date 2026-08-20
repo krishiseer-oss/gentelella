@@ -11,7 +11,7 @@ const CACHE = 'gentelella-v4-r2';
 // `/` it's `https://example.com/`; under `/theme/gentelella-v4-rc1/` it's that
 // path. Resolving relative URLs against the scope makes the SW work in both.
 const SCOPE = self.registration?.scope || self.location.origin + '/';
-const OFFLINE_URL = new URL('production/offline.html', SCOPE).href;
+const OFFLINE_URL = new URL('production/index.html', SCOPE).href;
 const PRECACHE = [OFFLINE_URL];
 
 self.addEventListener('install', (event) => {

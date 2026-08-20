@@ -310,7 +310,7 @@ function openSignOutModal() {
 const USER_MENU = [
   { label: 'Profile',            action: () => { window.location.href = 'profile.html'; } },
   { label: 'Account settings',   action: () => { window.location.href = 'settings.html'; } },
-  { label: 'Theme generator',    action: () => { window.location.href = 'theme.html'; } },
+  { label: 'Notifications',     action: () => { window.location.href = 'notifications.html'; } },
   { label: 'Keyboard shortcuts', action: openShortcutsModal },
   '-',
   { label: 'Help & support',     action: () => { window.location.href = 'faq.html'; } },
@@ -359,7 +359,7 @@ function buildMessagesPanel() {
     <div class="panel-header">
       <span class="panel-title">Messages</span>
       ${unreadCount ? `<span class="panel-badge">${unreadCount} new</span>` : ''}
-      <a href="inbox.html" class="panel-action">Open inbox</a>
+      <a href="audit_logs.html" class="panel-action">Open inbox</a>
     </div>
     <div class="panel-list">
       ${MESSAGES.map((m, i) => `
@@ -374,7 +374,7 @@ function buildMessagesPanel() {
       `).join('')}
     </div>
     <div class="panel-footer">
-      <a href="inbox.html" class="panel-link">View all messages</a>
+      <a href="audit_logs.html" class="panel-link">View all messages</a>
     </div>
   `;
   return wrap;
@@ -421,7 +421,7 @@ function openMessageDetail(m) {
     `,
     actions: [
       { label: 'Cancel', variant: 'ghost' },
-      { label: 'Open in inbox', variant: 'outline', action: () => { window.location.href = 'inbox.html'; } },
+      { label: 'Open audit log', variant: 'outline', action: () => { window.location.href = 'audit_logs.html'; } },
       { label: 'Send reply', variant: 'primary', action: () => showToast('Reply sent', { variant: 'success' }) }
     ]
   });

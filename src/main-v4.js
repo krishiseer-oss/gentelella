@@ -26,12 +26,6 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 }
 
 // Lazy-load page-specific modules only when their host element is on the page.
-if (document.getElementById('inbox-root')) {
-  import('./v4/inbox.js').then((m) => m.initInbox());
-}
-if (document.querySelector('.calendar-grid')) {
-  import('./v4/calendar.js').then((m) => m.initCalendar());
-}
 if (document.querySelector('.settings-content')) {
   import('./v4/settings.js').then((m) => m.initSettings());
 }
@@ -95,9 +89,8 @@ document.addEventListener('click', (e) => {
 });
 
 // Card option buttons → popover menu.
-// Calendar nav buttons (prev/next month) are also .card-opt-btn but live
-// inside .calendar-toolbar; calendar.js stops propagation on those clicks
-// so they never reach this handler.
+// Card option buttons open the shared contextual menu unless a page-specific
+// handler has already prevented the event.
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.card-opt-btn');
   if (!btn) {return;}
